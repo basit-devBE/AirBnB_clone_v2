@@ -13,8 +13,8 @@ sudo touch /data/web_static/releases/test/index.html
 echo "Holberton School" | 
 sudo tee /data/web_static/releases/test/index.html
 
-sudo ls -sf /data/web_static/releases/test/ /data/web_static/current
-sudo chowm -R ubuntu:ubuntu /data/
+sudo ln -s -f /data/web_static/releases/test/ /data/web_static/current
+sudo chown -R ubuntu:ubuntu /data/
 
 sudo sed -i '/listen 80b/a location/hbnh_static { alias /data/web_static/current/; }' /etc/nginx/sites-available/default
 
