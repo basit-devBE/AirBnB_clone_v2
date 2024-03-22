@@ -28,10 +28,15 @@ def c_text(text):
     """Displays 'C' followed by the value of the text variable"""
     return "C {}".format(text.replace("_", " "))
 
+@app.route("/python", strict_slashes=False)
 @app.route("/python/<text>", strict_slashes=False)
-def python_text(text):
-    """Displays 'Python' followed by the value of the text variable"""
-    return "Python {}".format(text.replace("_", " "))
+def python(text="is cool"):
+    """Displays 'Python' followed by the value of <text>.
+
+    Replaces any underscores in <text> with slashes.
+    """
+    text = text.replace("_", " ")
+    return "Python {}".format(text)
 
 
 if __name__ == "__main__":
