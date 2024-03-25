@@ -9,7 +9,9 @@ from flask import Flask
 
 app = Flask(__name__)
 
-#Define the application route
+# Define the application route
+
+
 @app.route("/", strict_slashes=False)
 def hello_hbnb():
     """Displays 'Hello HBNB!'"""
